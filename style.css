@@ -68,17 +68,39 @@ header ul li a.active {
     color: #2b1055;
 }
 /*#endregion*/
-.card{
+/* .card{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 20vh;
     background: #343865;
+} */
+.card
+{
+    position: relative;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    margin-left: 20px;
+    /* background: #343865; */
+}
+@media (max-width:991px) {
+    .card{
+        flex-direction: column;
+    }
 }
 .about-text{
     display: flex;
     justify-content:center;
-    padding: 20px;
+}
+.certlogo{
+    height: 100px;
+    width: 100px;
+    flex-wrap: wrap;
+}
+.profilepic{
+    max-width: 150px;
+    flex: 0 0 150px;
 }
 .profilepic img{
     width: 20vh;
