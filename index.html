@@ -1,100 +1,110 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Eric Nguyen</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
+<head>
+  <title>Eric Nguyen</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script>
 
-  <body>
-    <header>
-      <a href="#" class="logo">Logo</a>
-      <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Experience</a></li>
-      </ul>
-    </header>
-    <div id="progressbar"></div>
-    <div id="scrollPath"></div>
-    <section id="home">
-      <img src="stars.png" id="stars" />
-      <img src="moon.png" id="moon" />
-      <img src="l1.png" id="l1" />
-      <img src="l2.png" id="l2" />
-      <img src="l3.png" id="l3" />
-      <img src="l4.png" id="l4" />
-      <img src="fog2.png" id="fog" />
-      <h2 id="text">Eric Nguyen</h2>
-      <a href="#" id="btn">Download Resume</a>
-    </section>
-    <div class="container">
-      <h2>About</h2>
-      <!--list certifications with logo under about section-->
-      <div class="card">
-        <div class="profilepic">
-          <img src="profile.png" />
-        </div>
-        <div class="about-text">
-          <p>
-            I am currently a student at FIU. People I know would describe me as
-            a friendly and resourceful problem solver who is always eager to
-            learn. I spend most of my free time learning new technologies or
-            working on different programming projects. I am interested in IT, so
-            my goal is to become a Cloud Engineer. I possess widely known IT
-            certifications including the CompTIA Network+ and Security+.
-          </p>
-          <br /><br />
-        </div>
+  // JavaScript Code
+const counter = document.querySelector(".counter-number");
+async function updateCounter() {
+  let response= await fetch("https://bplc5dirpyhmpmbikbnr2nrr4a0hpiqe.lambda-url.us-east-1.on.aws/");
+  let data = await response.json();
+  counter.innerHTML = 'Views: ${data}';
+}
+updateCounter()
+</script>
+<body>
+  <header>
+    <a href="#" class="logo">Logo</a>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Experience</a></li>
+      <li><div class="counter-number" href="#">Error reading views</a></li>
+
+    </ul>
+  </header>
+  <div id="progressbar"></div>
+  <div id="scrollPath"></div>
+  <section id="home">
+    <img src="stars.png" id="stars" />
+    <img src="moon.png" id="moon" />
+    <img src="l1.png" id="l1" />
+    <img src="l2.png" id="l2" />
+    <img src="l3.png" id="l3" />
+    <img src="l4.png" id="l4" />
+    <img src="fog2.png" id="fog" />
+    <h2 id="text">Eric Nguyen</h2>
+    <a href="#" id="btn">Download Resume</a>
+  </section>
+  <div class="container">
+    <h2>About</h2>
+    <!--list certifications with logo under about section-->
+    <div class="card">
+      <div class="profilepic">
+        <img src="profile.png" />
       </div>
-
-
-      
-      <h2>Skills</h2>
-      <h3>Programming</h3>
-      <p>Java, C#, Python, PowerShell, Bash</p>
-      <h3>Software</h3>
-      <p>Blender , Unity,</p>
-      <br /><br />
-
-      <h2>Experience</h2>
-      <p>Blender , Unity</p>
-      <br /><br />
+      <div class="about-text">
+        <p>
+          I am currently a student at FIU. People I know would describe me as
+          a friendly and resourceful problem solver who is always eager to
+          learn. I spend most of my free time learning new technologies or
+          working on different programming projects. I am interested in IT, so
+          my goal is to become a Cloud Engineer. I possess widely known IT
+          certifications including the CompTIA Network+ and Security+.
+        </p>
+        <br /><br />
+      </div>
     </div>
+    
+    <h2>Skills</h2>
+    <h3>Programming</h3>
+    <p>Java, C#, Python, PowerShell, Bash</p>
+    <h3>Software</h3>
+    <p>Blender , Unity,</p>
+    <br /><br />
 
-    <script>
-      let stars = document.getElementById("stars");
-      let moon = document.getElementById("moon");
-      let l1 = document.getElementById("l1");
-      let l2 = document.getElementById("l2");
-      let l3 = document.getElementById("l3");
-      let l4 = document.getElementById("l4");
-      let fog = document.getElementById("fog");
-      let text = document.getElementById("text");
-      let btn = document.getElementById("btn");
+    <h2>Experience</h2>
+    <p>Blender , Unity</p>
+    <br /><br />
+  </div>
 
-      window.addEventListener("scroll", function () {
-        let value = window.scrollY;
-        stars.style.left = value * 0.25 + "px";
-        moon.style.top = value * 1.05 + "px";
-        btn.style.marginTop = value * 0.5 + "px";
+  <script>
+    let stars = document.getElementById("stars");
+    let moon = document.getElementById("moon");
+    let l1 = document.getElementById("l1");
+    let l2 = document.getElementById("l2");
+    let l3 = document.getElementById("l3");
+    let l4 = document.getElementById("l4");
+    let fog = document.getElementById("fog");
+    let text = document.getElementById("text");
+    let btn = document.getElementById("btn");
 
-        fog.style.top = value * -0.2 + "px";
-        // fog.style.opacity=value*-.01;
+    window.addEventListener("scroll", function () {
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + "px";
+      moon.style.top = value * 1.05 + "px";
+      btn.style.marginTop = value * 0.5 + "px";
 
-        l1.style.top = value * 0.1 + "px";
-        l2.style.top = value * 0.05 + "px";
-        l3.style.top = value * 0.02 + "px";
-      });
-    </script>
-    <!-- <script>
-        //scrollbar
-        let progress = document.getElementById("progressbar");
-        let totalHeight = document.body.scrollHeight - window.innerHeight;
-        window.onscroll = function () {
-            let progressHeight = (window.pageYOffset / totalHeight) * 100;
-            progress.style.height = progressHeight + "%";
-        }
-    </script> -->
-  </body>
+      fog.style.top = value * -0.2 + "px";
+      // fog.style.opacity=value*-.01;
+
+      l1.style.top = value * 0.1 + "px";
+      l2.style.top = value * 0.05 + "px";
+      l3.style.top = value * 0.02 + "px";
+    });
+  </script>
+  <script>
+    //scrollbar
+    let progress = document.getElementById("progressbar");
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function () {
+      let progressHeight = (window.pageYOffset / totalHeight) * 100;
+      progress.style.height = progressHeight + "%";
+    }
+  </script>
+</body>
 </html>
